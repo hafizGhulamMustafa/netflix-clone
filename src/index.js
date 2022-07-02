@@ -2,13 +2,22 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+import Home from './home';
+import About from './about';
+import Layout from './layout';
 import reportWebVitals from './reportWebVitals';
-import UseRef from './useref';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 ReactDOM.render(
-  <React.StrictMode>
-    <UseRef name= "Mustafa" />
-  </React.StrictMode>,
+  <BrowserRouter>
+  <Routes>
+    <Route index path= "/" element={<Home/>}/>
+    <Route exect path= "*" element={<Layout/>}/>
+    <Route exect path='/about' element={<About/>}/>
+    <Route exect path='/app' element={<App/>}/>
+  </Routes>
+  </BrowserRouter>
+  ,
   document.getElementById('root')
 );
 
